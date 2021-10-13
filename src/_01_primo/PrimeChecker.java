@@ -2,7 +2,7 @@ package _01_primo;
 
 public class PrimeChecker implements Runnable {
 	private int num;
-	private boolean prime = (Boolean) null;
+	private boolean prime ;
 	private double time;
 
 	public PrimeChecker(int num) {
@@ -46,7 +46,7 @@ public class PrimeChecker implements Runnable {
 
 	public void printResult() {
 		System.out.println(String.format(
-				"El %s con valor = %d, %s es primo y ha tardado %d milisegundos en calcularlo",
+				"El %s con valor = %d, %s es primo y ha tardado %f milisegundos en calcularlo",
 				Thread.currentThread().getName(), num, prime ? "" : "no",
 				time));
 

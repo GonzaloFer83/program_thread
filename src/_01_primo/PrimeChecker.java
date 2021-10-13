@@ -1,13 +1,13 @@
 package _01_primo;
 
 public class PrimeChecker implements Runnable {
-	private int num;
+	private int posiblePrime;
 	private boolean prime ;
-	private double time;
+	private double timeControl;
 
-	public PrimeChecker(int num) {
+	public PrimeChecker(int posiblePrime) {
 
-		this.num = num;
+		this.posiblePrime = posiblePrime;
 
 	}
 
@@ -15,18 +15,18 @@ public class PrimeChecker implements Runnable {
 	public void run() {
 		long initTime = System.currentTimeMillis();
 		long endTime;
-		if (comprobation())
+		if (isNumberCorrect())
 			isPrime();
 		else
 			System.out.println("Este valor no vale");
 
 		endTime = System.currentTimeMillis();
-		time = (double) ((endTime - initTime));
+		timeControl = (double) ((endTime - initTime));
 		printResult();
 	}
 
-	public boolean comprobation() {
-		if (num <= 1 || num > Integer.MAX_VALUE) {
+	public boolean isNumberCorrect() {
+		if (posiblePrime <= 1 || posiblePrime > Integer.MAX_VALUE) {
 			System.out
 					.println("Este valor no vale, tiene que ser superior a 1");
 			return false;
@@ -37,8 +37,8 @@ public class PrimeChecker implements Runnable {
 	public void isPrime() {
 		prime = true;
 		int accountant = 2;
-		while ((prime) && (accountant != num)) {
-			if (num % accountant == 0)
+		while ((prime) && (accountant != posiblePrime)) {
+			if (posiblePrime % accountant == 0)
 				prime = false;
 			accountant++;
 		}
@@ -47,8 +47,8 @@ public class PrimeChecker implements Runnable {
 	public void printResult() {
 		System.out.println(String.format(
 				"El %s con valor = %d, %s es primo y ha tardado %f milisegundos en calcularlo",
-				Thread.currentThread().getName(), num, prime ? "" : "no",
-				time));
+				Thread.currentThread().getName(), posiblePrime, prime ? "" : "no",
+						timeControl));
 
 	}
 

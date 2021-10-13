@@ -5,9 +5,9 @@ public class EmailGenerator implements Runnable {
 	private Buffer buffer;
 	private int nEmails;
 
-	public EmailGenerator(Buffer buffer, int howEmailGenerate) {
+	public EmailGenerator(Buffer buffer, int nEmails) {
 		this.buffer = buffer;
-		this.nEmails = howEmailGenerate;
+		this.nEmails = nEmails;
 	}
 
 	public void run() {

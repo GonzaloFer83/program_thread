@@ -26,8 +26,9 @@ public class PrimeChecker implements Runnable {
 	}
 
 	public boolean comprobation() {
-		if (num <= 1 || num>Integer.MAX_VALUE) {
-			System.out.println("Este valor no vale, tiene que ser superior a 1");
+		if (num <= 1 || num > Integer.MAX_VALUE) {
+			System.out
+					.println("Este valor no vale, tiene que ser superior a 1");
 			return false;
 		}
 		return true;
@@ -44,8 +45,10 @@ public class PrimeChecker implements Runnable {
 	}
 
 	public void printResult() {
-		System.out.println(String.format("El %s con valor = %d, %s es primo y ha tardado %d milisegundos en calcularlo",
-				Thread.currentThread().getName(), num, prime ? "" : "no", time));
+		System.out.println(String.format(
+				"El %s con valor = %d, %s es primo y ha tardado %d milisegundos en calcularlo",
+				Thread.currentThread().getName(), num, prime ? "" : "no",
+				time));
 
 	}
 

@@ -1,4 +1,4 @@
-package _02_primo;
+package _02_buffer;
 
 import com.github.javafaker.Faker;
 import java.lang.Math;

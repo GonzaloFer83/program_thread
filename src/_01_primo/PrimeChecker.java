@@ -15,7 +15,7 @@ public class PrimeChecker implements Runnable {
 	public void run() {
 		long initTime = System.currentTimeMillis();
 		long endTime;
-		if (isNumberCorrect())
+		if (isValidInput())
 			isPrime();
 		else
 			System.out.println("Este valor no vale");
@@ -25,7 +25,7 @@ public class PrimeChecker implements Runnable {
 		printResult();
 	}
 
-	public boolean isNumberCorrect() {
+	public boolean isValidInput() {
 		if (posiblePrime <= 1 || posiblePrime > Integer.MAX_VALUE) {
 			System.out
 					.println("Este valor no vale, tiene que ser superior a 1");

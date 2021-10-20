@@ -1,4 +1,4 @@
-package _02_primo;
+package _02_buffer;
 
 public class EmailSender implements Runnable {
 
